@@ -21,13 +21,18 @@ Changes reach `main` only through a pull request, and new work reaches `dev` the
 way. A repository may let maintainers push small changes straight to `dev`; its own guide
 says so when it does.
 
-**Main-only repositories.** Some repositories are installed by users straight from their
-default branch: the Claude plugin marketplace
-[`jpipe-skills`](https://github.com/jpipe-mcscert/jpipe-skills) and the Scoop bucket
-[`scoop-mcscert`](https://github.com/jpipe-mcscert/scoop-mcscert). A `dev` branch there
-would ship unreleased work, so they have none. Work branches are cut from `main` and come
-back through a pull request into `main`. Content repositories (tutorials, examples, demos)
-also work against `main` only.
+**Main-only repositories.** The Claude plugin marketplace
+[`jpipe-skills`](https://github.com/jpipe-mcscert/jpipe-skills) is installed by users
+straight from its default branch, so a `dev` branch there would ship unreleased work. It
+has none: work branches are cut from `main` and come back through a pull request into
+`main`. Content repositories (tutorials, examples, demos) also work against `main` only.
+
+**Catalogue repositories are not part of this workflow.** The Scoop bucket
+[`scoop-mcscert`](https://github.com/jpipe-mcscert/scoop-mcscert) and the Homebrew tap
+[`homebrew-mcscert`](https://github.com/jpipe-mcscert/homebrew-mcscert) are written only by
+the release pipelines of the projects they distribute. Nobody modifies them by hand, and
+they take no pull requests. A problem in a catalogue is fixed in the release automation
+that writes it.
 
 ## Making a change
 
