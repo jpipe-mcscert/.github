@@ -98,9 +98,10 @@ limits:
   maintainer's approval. If something seems to need a branch of its own, say so and wait.
   If the session is on `main` or `dev` (or a main-only repository's default branch), ask
   for a work branch before committing anything.
-- **Never commit to `main` or `dev`, merge a pull request, or push a tag.** A human merges,
-  unless the maintainer explicitly asks the assistant to merge a given pull request. Even
-  then, the release pull request into `main` and every tag stay with the maintainer.
+- **Never commit to `main` or `dev` without an explicit request, merge a pull request, or
+  push a tag.** A human merges, unless the maintainer explicitly asks the assistant to
+  merge a given pull request. Even then, a release or hotfix pull request into `main` and
+  every tag stay with the maintainer.
 - **Open a pull request only when asked**, then follow the steps under
   [Pull requests](#pull-requests) in order and stop once it is ready for review. Report
   the threads left open and why.
