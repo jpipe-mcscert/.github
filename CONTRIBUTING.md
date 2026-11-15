@@ -17,8 +17,9 @@ approach before you write the code.
 | `dev` | The integration branch, and the default branch on GitHub. New work starts here and comes back here. |
 | a work branch | One per piece of work, cut from `dev`: `feat/…`, `fix/…`, `chore/…`, `docs/…`. |
 
-Nobody commits directly to `main` or `dev`. Every change reaches them through a pull
-request.
+Changes reach `main` only through a pull request, and new work reaches `dev` the same
+way. A repository may let maintainers push small changes straight to `dev`; its own guide
+says so when it does.
 
 **Main-only repositories.** Some repositories are installed by users straight from their
 default branch: the Claude plugin marketplace
