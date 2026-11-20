@@ -1,3 +1,7 @@
+<!-- Pull requests are invite-only: only maintainers and invited collaborators open one.
+     Anyone else, please open an issue to discuss the change first. See the contributing
+     guide: https://github.com/jpipe-mcscert/.github/blob/main/CONTRIBUTING.md -->
+
 ## What and why
 
 <!-- What does this change, and why? Link the issue: "Closes #N". -->

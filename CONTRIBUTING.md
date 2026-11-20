@@ -7,8 +7,22 @@ in any repository that has no contributing guide of its own. A repository that h
 to it, such as the development setup, the tests to run, or the CI checks. It does not
 change the workflow described here.
 
-Open an issue before starting anything larger than a fix, so that we can agree on the
-approach before you write the code.
+## Contributions are by invitation
+
+Pull requests are invite-only. Only the maintainers and the collaborators they invite can
+open one.
+
+**To contribute, open an issue first.** Describe the problem, or the change you have in
+mind, and discuss it with us there. If we agree that it should be done, and that you
+should do it, a maintainer invites you as a collaborator, and you then work as this guide
+describes.
+
+Issues are open to everyone: bug reports, questions and proposals are welcome. Unsolicited
+pull requests are not accepted, whoever or whatever wrote them. An issue in our backlog is
+not an invitation to send a fix, and we do not label issues for newcomers.
+
+Collaborators, too, open an issue before starting anything larger than a fix, so that we
+can agree on the approach before the code is written.
 
 ## Branches
 
@@ -91,8 +105,8 @@ Only a maintainer merges a release or a hotfix into `main` and pushes a release 
 
 ## For AI assistants
 
-Coding assistants working in these repositories follow the same workflow, with these
-limits:
+Coding assistants working in these repositories, for a maintainer or an invited
+collaborator, follow the same workflow, with these limits:
 
 - **Stay on the branch the session is on.** Do not create a branch without the
   maintainer's approval. If something seems to need a branch of its own, say so and wait.
