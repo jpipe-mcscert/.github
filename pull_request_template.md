@@ -8,7 +8,7 @@
 
 ## Checklist
 
-- [ ] Targets `dev` (`main` only for a release, a hotfix, or in a main-only repository)
+- [ ] Targets `dev` (`main` only from a release branch, for a hotfix, or in a main-only repository)
 - [ ] Reviewed locally, and the findings addressed
 - [ ] `CHANGELOG` and documentation updated, if users will notice the change
 - [ ] The SonarCloud quality gate passes (where the repository has one)

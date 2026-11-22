@@ -31,6 +31,7 @@ can agree on the approach before the code is written.
 | `main` | Released code. A release is a tag on `main` (`vX.Y.Z`). |
 | `dev` | The integration branch, and the default branch on GitHub. New work starts here and comes back here. |
 | a work branch | One per piece of work, cut from `dev`: `feat/…`, `fix/…`, `chore/…`, `docs/…`. |
+| a release branch | One per release, cut from `dev`: `release/X.Y.Z`. It goes into `main`, not back into `dev`. |
 
 Changes reach `main` only through a pull request, and new work reaches `dev` the same
 way. A repository may let maintainers push small changes straight to `dev`; its own guide
@@ -64,8 +65,8 @@ that writes it.
 
 ## Pull requests
 
-A pull request goes into `dev`. It goes into `main` only for a release, for a hotfix, or
-in a main-only repository. It moves through these steps:
+A pull request goes into `dev`. It goes into `main` only from a release branch, for a
+hotfix, or in a main-only repository. It moves through these steps:
 
 1. **Review it locally first**, and address what the review finds.
 2. **Open it as a draft.**
@@ -81,17 +82,25 @@ in a main-only repository. It moves through these steps:
 
 ## Releases
 
-A release is a pull request from `dev` into `main`:
+A release is one pull request, from a release branch into `main`:
 
-1. Set the version and move the `CHANGELOG`'s `[Unreleased]` notes under the new version
-   and date, on a work branch merged into `dev`, or directly on `dev` where the
-   repository lets maintainers push there.
-2. Open the release pull request from `dev` into `main`, and take it through the steps
-   above.
-3. A maintainer merges it, then tags the merge commit on `main` (`vX.Y.Z`) and pushes the
+1. Cut `release/X.Y.Z` from `dev`. It holds everything `dev` holds: the release is what
+   `dev` holds at that moment.
+2. On it, set the version and move the `CHANGELOG`'s `[Unreleased]` notes under the new
+   version and date.
+3. Open the release pull request from `release/X.Y.Z` into `main`, and take it through the
+   steps above. Its diff is the whole release: what was merged into `dev` since the last
+   one, and the release commit.
+4. A maintainer merges it, then tags the merge commit on `main` (`vX.Y.Z`) and pushes the
    tag. The tag triggers the repository's release workflow.
-4. Merge `main` back into `dev`, so that the release commit is on both branches and the
-   next release merges cleanly.
+5. Merge `main` back into `dev`, which brings the release commit to `dev`, so that the
+   next release merges cleanly; then set `dev` to the next development version, in a
+   repository that keeps one.
+
+The release commit goes into `main` without a pull request into `dev` first: the changes
+it releases were each reviewed on their way into `dev`, and the release pull request is
+where the release as a whole is reviewed and gated. Work merged into `dev` while the
+release pull request is open waits for the next release.
 
 **Hotfixes.** A fix to the released version that cannot wait for the next release is cut
 from `main` (`fix/…`), comes back into `main` through a pull request, and is released with
